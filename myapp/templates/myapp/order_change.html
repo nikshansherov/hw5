@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Изменение заказа {% endblock %}
+
+{% block content %}
+<h2>Изменение данных</h2>
+<form action="" method="post">
+    {% csrf_token %}
+
+        <h3>Заказ № {{ order.id }} Клиент {{ order.customer.name }}</h3><br>
+<!--        <input type="number" name="id" value="{{order.id}}"/>-->
+
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
+    <p>
+<!--        <label>Клиент</label><br>-->
+<!--        <input type="text" name="customer" value="{{order.customer.name}}"/>-->
+<!--    </p>-->
+<!--    <p>-->
+<!--        <label>Продукты</label><br>-->
+<!--        <input type="text" name="products" value="{{order.products.name}}"/>-->
+<!--    </p>-->
+
+<!--    <input type="submit" value="Изменить">-->
+<!--</form>-->
+{% endblock %}

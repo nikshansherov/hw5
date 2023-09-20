@@ -1,0 +1,22 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Магазин продуктов{% endblock %}
+
+{% block content %}
+
+<h1>Работа с клиентами</h1>
+<h2>
+    <a href="/client_add">Добавить</a><br>
+    <a href="/client_selection">Показать, изменить, удалить</a><br>
+</h2>
+<h1>Работа с продуктами</h1>
+<h2>
+    <a href="/product_add">Добавить</a><br>
+    <a href="/product_selection">Показать, изменить, удалить</a><br>
+</h2>
+<h1>Работа с заказами</h1>
+<h2>
+    <a href="/order_add">Добавить</a><br>
+    <a href="/order_selection">Показать, изменить, удалить</a><br>
+</h2>
+{% endblock %}

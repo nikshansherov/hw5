@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Заказы клиента{% endblock %}
+
+{% block content %}
+    <h1>Заказы клиента {{ client.name }}:</h1>
+    <form action="" method="post">
+<!--    {% csrf_token %}-->
+    <h2>
+        {% for order in orders %}
+<!--            {% if cliend.id == order.customer.id %}-->
+        Заказ № {{ order.id }}<br>
+        Продукты:<br>
+        {% for product in order.products %}
+            {{ product.id }}<br>
+        {% endfor %}
+<!--            {% endif %}-->
+        {% endfor %}
+    </h2>
+    </form>
+{% endblock %}

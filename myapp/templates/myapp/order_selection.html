@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Выбор заказа{% endblock %}
+
+{% block content %}
+
+<h2>Список заказов</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    <table>
+        <thead><th>Номер заказа</th><th>Клиент</th><th>Сумма</th><th>Продукты</th><th></th></thead>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.customer.name }}</td>
+            <td>{{ order.total_price }}</td>
+            {% for product in order.products.all %}
+                <td>{{ product.name }}</td>
+            <tr><th></th><th></th><th></th>
+            {% endfor %}
+            <td><a href="/order_change/{{ order.id }}">Изменить</a> | <a href="/order_delete/{{order.id}}">Удалить</a></td>
+<!--        </tr>-->
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}

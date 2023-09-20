@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Выбор продукта{% endblock %}
+
+{% block content %}
+
+<h2>Список продуктов</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    <table>
+        <thead><th>Id</th><th>Наименование</th><th></th></thead>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td><a href="/product_change/{{ product.id }}">Изменить</a> | <a href="/product_delete/{{product.id}}">Удалить</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+{% endblock %}
